@@ -19,13 +19,13 @@ jobs:
           java-version: "17"
 
       - name: Make gradlew executable
-        run: chmod +x gradlew
+        run: chmod +x Expense_App_GitHub_Ready/gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: cd Expense_App_GitHub_Ready && ./gradlew assembleDebug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: Expense_App_GitHub_Ready/app/build/outputs/apk/debug/app-debug.apk
